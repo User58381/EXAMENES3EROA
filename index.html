@@ -1,126 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canjeo de Estampas</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
-        body {
-            font-family: 'Comic Neue', cursive;
-            text-align: center;
-            background: url('./imagenes/fondo.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-        }
-        .sticker {
-            display: inline-block;
-            margin: 20px;
-            padding: 10px;
-            border-radius: 10px;
-            text-align: center;
-            position: relative;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 15px;
-            animation: glowEffect 2s infinite alternate;
-        }
-        .sticker img {
-            width: 120px;
-            height: 120px;
-            border-radius: 10px;
-            animation: stickerGlow 1.5s infinite alternate;
-        }
-        .sticker button {
-            margin-top: 10px;
-            padding: 5px 10px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .raro { border: 4px solid blue; background-color: #d0e1ff; }
-        .epico { border: 4px solid purple; background-color: #e1c0ff; }
-        .legendario { border: 4px solid orange; background-color: #ffdbac; }
-        .mitico { border: 4px solid red; background-color: #ffc0c0; }
-        .exclusivo { border: 4px solid gold; background-color: #fff7c0; }
-        .superexclusivo { border: 4px solid black; background-color: #ffcc00; animation: superGlow 1.5s infinite alternate; }
-
-        @keyframes glowEffect {
-            0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
-            100% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.8); }
-        }
-
-        @keyframes stickerGlow {
-            0% { filter: brightness(1); }
-            100% { filter: brightness(1.5); }
-        }
-        
-        @keyframes superGlow {
-            0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-            100% { box-shadow: 0 0 30px rgba(255, 215, 0, 1); }
-        }
-    </style>
-</head>
-<body>
-    <h1>Canjeo de Estampas</h1>
-    <h2>Estampas del Día</h2>
-    <div id="stickerContainer"></div>
-    <script>
-        function obtenerEstampasDelDia() {
-            return [
-                { id: 1, nombre: "Taco Feliz", costo: 800, img: "./imagenes/taco_feliz.jpeg", rareza: "raro" },
-                { id: 2, nombre: "Pollito Amarillo", costo: 900, img: "./imagenes/pollito_amarillo.png", rareza: "epico" },
-                { id: 3, nombre: "Huevo Tierno", costo: 1000, img: "./imagenes/huevo_tierno.png", rareza: "legendario" },
-                { id: 4, nombre: "Gato Fresa", costo: 1100, img: "./imagenes/gato_fresa.png", rareza: "mitico" },
-                { id: 5, nombre: "Capibara Estrella", costo: 1200, img: "./imagenes/capibara_estrella.jpg", rareza: "exclusivo" },
-                { id: 6, nombre: "Aguacate Kawaii", costo: 1300, img: "./imagenes/aguacate_kawaii.jpg", rareza: "superexclusivo" }
-            ];
-        }
-
-        function renderStickers() {
-            const container = document.getElementById("stickerContainer");
-            container.innerHTML = "";
-            let stickers = obtenerEstampasDelDia();
-            stickers.forEach(sticker => {
-                let div = document.createElement("div");
-                div.className = `sticker ${sticker.rareza}`;
-                div.innerHTML = `
-                    <img src="${sticker.img}" alt="${sticker.nombre}"><br>
-                    <strong>${sticker.nombre}</strong><br>
-                    <span style="font-size: 18px; color: black;">${sticker.rareza.toUpperCase()}</span><br>
-                    Costo: ${sticker.costo} puntos<br>
-                    <button onclick="canjear('${sticker.img}', ${sticker.costo})">Canjear</button>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        function canjear(imagen, costo) {
-            let cantidadPuntos = prompt(`Ingrese la cantidad de puntos para canjear esta estampa (Costo: ${costo} puntos):`);
-            if (cantidadPuntos !== null && !isNaN(cantidadPuntos) && cantidadPuntos.trim() !== "") {
-                cantidadPuntos = parseInt(cantidadPuntos);
-                if (cantidadPuntos >= costo) {
-                    imprimir(imagen);
-                } else {
-                    alert(`Necesitas al menos ${costo} puntos para canjear esta estampa.`);
-                }
-            } else {
-                alert("Entrada no válida. Intente nuevamente.");
-            }
-        }
-
-        function imprimir(imagen) {
-            let ventana = window.open("", "_blank");
-            ventana.document.write("<html><head><title>Impresión de Estampas</title><style>");
-            ventana.document.write("@page { size: landscape; margin: 0; }"); // Ajuste para modo horizontal
-            ventana.document.write("body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }");
-            ventana.document.write("img { width: 100%; height: auto; max-height: 100vh; }");
-            ventana.document.write("</style></head><body>");
-            ventana.document.write(`<img src="${imagen}">`);
-            ventana.document.write("</body></html>");
-            ventana.document.close();
-            setTimeout(() => { ventana.print(); ventana.close(); }, 500);
-        }
-
-        renderStickers();
-    </script>
-</body>
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#275a54" />
+    <meta name="description" content="Portal de exámenes revisados para las familias de 3.º A, Escuela Primaria Los Insurgentes." />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Exámenes | Los Insurgentes · 3.º A</title>
+    <style>body{margin:0;background:#f7f8f5;color:#172f3e;font-family:Arial,sans-serif}.initial-loading{min-height:70vh;display:grid;place-content:center;text-align:center;gap:12px;padding:30px}.initial-loading strong{font:28px Georgia,serif}.initial-loading p{font-size:14px;color:#647768}</style>
+    <script type="module" crossorigin src="./assets/index-BPJrb2mZ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BqM36BnK.css">
+  </head>
+  <body>
+    <div id="root"><div class="initial-loading"><strong>Los Insurgentes · 3.º A</strong><p>Preparando su consulta…</p></div></div>
+    <noscript><p style="padding:30px">Active JavaScript en su navegador para consultar el examen con el ID de su tarjeta.</p></noscript>
+  </body>
 </html>
