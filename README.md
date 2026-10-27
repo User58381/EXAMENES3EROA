@@ -3,6 +3,33 @@
 Versión lista para GitHub Pages. El archivo de entrada es **index.html**.
 No requiere instalar Node, compilar, configurar una API ni contratar un servidor.
 
+## Versión definitiva del primer trimestre · 26 de octubre de 2026
+
+Este paquete sustituye todos los reportes anteriores de **Trimestre 1** por
+los PDF del ZIP **chidooooooo.zip**, proporcionados por el maestro después
+de su revisión final. Conserva exactamente las fotografías y las marcas
+de esos archivos.
+
+- Trimestre 1 se abre de forma predeterminada, incluso con un ID recordado.
+- 25 reportes finales del primer trimestre, con sus 250 fotos revisadas.
+- Vannia ya está incluida con su resultado final y su PDF.
+- Dos alumnos continúan sin evaluar y sin calificación final.
+- Se conservan los 24 PDF de Repaso, los mismos 27 ID, el diseño y el visor.
+
+### Sustituir la versión anterior en EXAMENES3EROA
+
+Extraiga este ZIP y actualice los archivos de su repositorio existente.
+`index.html` debe quedar directamente en la raíz junto a `assets/`, `data/`
+y `pdfjs/`. Conserve los nombres y las carpetas. No requiere compilar.
+
+Puede subir primero los archivos de la raíz, `assets/` y `pdfjs/`, y después
+`data/`, confirmando los cambios en GitHub. La página usará los resultados
+definitivos al abrir de nuevo el expediente. Los reportes anteriores de
+Trimestre 1 dejan de estar vinculados a los alumnos; Repaso sigue disponible.
+
+El archivo de calificaciones para boletas se entrega por separado y se importa
+en Aula Digital QR; no se incluye como lista pública dentro de la página.
+
 ## Publicar desde la página de GitHub
 
 1. Extraiga el ZIP en su computadora.
@@ -23,8 +50,8 @@ Documentación oficial: <https://docs.github.com/en/pages/getting-started-with-g
 - Consulta individual mediante el ID del alumno.
 - Opción **Recordar ID en este dispositivo** y botón **Olvidar ID**.
 - Apartados separados: **Repaso**, **Trimestre 1**, **Trimestre 2** y **Trimestre 3**.
-- 27 expedientes: 24 reportes completos y 3 pendientes, sin calificación inventada.
-- Los 24 PDF originales más recientes, con cuatro páginas cada uno: resultados y dos fotos del examen con sus marcas de revisión.
+- 27 expedientes: Repaso conserva 24 reportes y 3 pendientes; Trimestre 1 contiene 25 reportes finales y 2 pendientes.
+- Repaso: 24 PDF originales con cuatro páginas cada uno y dos fotos revisadas. Trimestre 1: 25 PDF originales definitivos con reporte, revisión detallada y diez fotos de las hojas por alumno.
 - Visor incluido: **Anterior**, **Siguiente**, **Ver fotos**, **Ver reporte**, **Ampliar**, **Ajustar**, **Descargar** y **Cerrar**.
 - Diseño adaptable a celular, tableta y computadora, con ajustes para orientación horizontal.
 - Bibliotecas y recursos del visor incluidos en `assets` y `pdfjs`; no usa un visor de terceros ni un CDN.
